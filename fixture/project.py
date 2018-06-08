@@ -54,12 +54,12 @@ class ProjectHelper:
         self.app.wd.find_element_by_css_selector("tr:nth-child(7) > td > input").click()
         self.project_cache = None
 
-    def select_project_by_index(self, index):
-        self.app.wd.find_elements_by_css_selector(".width100 a[href*='project_id']")[index].click()
+    def select_project_by_id(self, project_id):
+        self.app.wd.find_element_by_css_selector(".width100 a[href*='project_id=%s']" % project_id).click()
 
-    def delete_project_by_index(self, index):
+    def delete_project_by_id(self, id):
         self.open_projects_page()
-        self.select_project_by_index(index)
+        self.select_project_by_id(id)
         self.app.wd.find_element_by_css_selector("div.border.center input.button").click()
         self.app.wd.find_element_by_css_selector("form input.button").click()
         self.project_cache = None

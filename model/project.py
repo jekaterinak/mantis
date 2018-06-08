@@ -1,5 +1,5 @@
 class Project:
-    def __init__(self, project_name=None, status="development", enabled=True, inherit_global=True, view_status="public",
+    def __init__(self, id=None, project_name=None, status="development", enabled=True, inherit_global=True, view_status="public",
                  description=None):
         self.project_name = project_name
         self.status = status
@@ -7,6 +7,7 @@ class Project:
         self.inherit_global = inherit_global
         self.view_status = view_status
         self.description = description
+        self.id = id
 
     def __repr__(self):
         return '%s:%s' % (self.project_name, self.description)
